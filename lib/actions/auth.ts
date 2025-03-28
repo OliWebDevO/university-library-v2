@@ -39,7 +39,7 @@ export const signInWithCredentials = async (
 
 export const signUp = async ( params : AuthCredentials) => {
 
-    const { fullName, email, password, universityId, universityCard } = params;
+    const { fullName, email, universityId, password, universityCard } = params;
 
     //Check if user already exists
     const existingUser = await db
@@ -61,8 +61,8 @@ export const signUp = async ( params : AuthCredentials) => {
         await db.insert(users).values({
             fullName,
             email,
-            password: hashedPassword,
             universityId,
+            password: hashedPassword,
             universityCard,
         });
 
