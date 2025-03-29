@@ -8,12 +8,14 @@ import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import ratelimit from "../ratelimite";
 import { redirect } from "next/navigation";
+import { workflowClient } from "../workflow";
+import config from "../config";
 
 
 export const signInWithCredentials = async (
     params: Pick<AuthCredentials, "email" | "password">,
 ) => {
-    
+
     const { email, password } = params;
 
     const ip = (await headers()).get('x-forwarded-for') || '127.0.0.1';
@@ -79,6 +81,15 @@ export const signUp = async ( params : AuthCredentials) => {
             password: hashedPassword,
             universityCard,
         });
+
+        // Send email to user
+        await workflowClient.trigger({
+            url:`${config.env.prodApiEndpoint}/api/workflows/onboarding`,
+            body: {
+                email,
+                fullName,
+            }
+        })
 
         await signInWithCredentials({ email, password });
 
