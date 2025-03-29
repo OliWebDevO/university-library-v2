@@ -12,14 +12,14 @@ export const workflowClient = new WorkflowClient({
 const qstachClient = new QStachClient({ token: config.env.upstash.qstashToken });
 
 export const sendEmail = async ({message, email, subject} : {message: string; email: string; subject: string;}) => {
-    
+
     await qstachClient.publishJSON({
         api: {
           name: "email",
           provider: resend({ token: config.env.resendToken }),
         },
         body: {
-          from: "Oliver <hello.testopia.pro>",
+          from: "Oliver <contact@testopia.pro>",
           to: [email],
           subject: subject,
           html: message,
