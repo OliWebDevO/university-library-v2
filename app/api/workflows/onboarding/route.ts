@@ -60,7 +60,7 @@ export const { POST } = serve<InitialData>(async (context) => {
               text-align: 'center';
             }}
           >
-            <Text
+            <p
               style={{
                 margin-top: 16;
                 margin-bottom: 16;
@@ -71,8 +71,8 @@ export const { POST } = serve<InitialData>(async (context) => {
               }}
             >
               We are thrilled to have you here !
-            </Text>
-            <Heading
+            </p>
+            <h1
               as="h1"
               style={{
                 margin: '0px',
@@ -84,23 +84,23 @@ export const { POST } = serve<InitialData>(async (context) => {
               }}
             >
               Welcome to our library  !
-            </Heading>
-            <Text
+            </h1>
+            <p
               style={{ fontSize: 16, lineHeight: '24px', color: 'rgb(107,114,128)' }}
             >
              You are now a member of our platform ! You can reset your credential, move your books around, and never miss a beat !
-            </Text>
+            </p>
             <button
               href="https://react.email"
               style={{
-                marginTop: 16,
-                borderRadius: 8,
-                backgroundColor: 'rgb(79,70,229)',
-                paddingLeft: 40,
-                paddingRight: 40,
-                paddingTop: 12,
-                paddingBottom: 12,
-                fontWeight: 600,
+                margin-top: 16,
+                border-radius: 8,
+                background-color: 'rgb(79,70,229)',
+                padding-left: 40,
+                padding-right: 40,
+                padding-top: 12,
+                padding-nottom: 12,
+                font-weight: 600,
                 color: 'rgb(255,255,255)',
               }}
             >
