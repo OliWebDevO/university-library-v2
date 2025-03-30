@@ -26,8 +26,7 @@ const Layout = async ({children} : {children : ReactNode}) => {
     .limit(1);
 
     if (user[0].lastActivityDate)
-
-
+      
     await db
     .update(users)
     .set({ lastActivityDate: new Date().toISOString().slice(0, 10) 

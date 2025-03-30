@@ -1,5 +1,6 @@
 import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
+import Email from "@/emails/my-email";
 import { sendEmail } from "@/lib/workflow";
 import { serve } from "@upstash/workflow/nextjs"
 import { eq } from "drizzle-orm";
@@ -40,7 +41,8 @@ export const { POST } = serve<InitialData>(async (context) => {
 
   // Welcome email
   await context.run("new-signup", async () => {
-    await sendEmail({email, subject: "Welcome to the platform", message: `Hello ${fullName}, welcome to our platform!`})
+    // await sendEmail({email, subject: "Welcome to the platform", message: `Hello ${fullName}, welcome to our platform!`})
+    await sendEmail({email, subject: "Welcome to the platform", message: `${Email({fullName})}`})
   })
 
   await context.sleep("wait-for-3-days", 60 * 60 * 24 * 3)
