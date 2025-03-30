@@ -1,7 +1,7 @@
 import { Button, Html, Section, Img, Text, Heading } from "@react-email/components";
 import * as React from "react";
 
-export default function Email({fullName}:{fullName: string}) {
+export default function Email() {
   return (
   <Html>
     <Section style={{ marginTop: 16, marginBottom: 16 }}>
@@ -31,7 +31,7 @@ export default function Email({fullName}:{fullName: string}) {
             color: 'rgb(79,70,229)',
           }}
         >
-          We are thrilled to have you here {fullName} !
+          We are thrilled to have you here !
         </Text>
         <Heading
           as="h1"
@@ -44,12 +44,12 @@ export default function Email({fullName}:{fullName: string}) {
             color: 'rgb(17,24,39)',
           }}
         >
-          Welcome to our library {fullName} !
+          Welcome to our library  !
         </Heading>
         <Text
           style={{ fontSize: 16, lineHeight: '24px', color: 'rgb(107,114,128)' }}
         >
-        {fullName} You are now a member of our platform ! You can reset your credential, move your books around, and never miss a beat !
+         You are now a member of our platform ! You can reset your credential, move your books around, and never miss a beat !
         </Text>
         <Button
           href="https://react.email"
