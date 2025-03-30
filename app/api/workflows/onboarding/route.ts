@@ -49,25 +49,25 @@ export const { POST } = serve<InitialData>(async (context) => {
             height="320"
             src="https://react.email/static/herman-miller-chair.jpg"
             style={{
-              width: '100%',
-              borderRadius: 12,
-              objectFit: 'cover',
+              width: 100%;
+              border-radius: 12;
+              object-fit: 'cover';
             }}
           />
           <Section
             style={{
-              marginTop: 32,
-              textAlign: 'center',
+              margin-top: 32;
+              text-align: 'center';
             }}
           >
             <Text
               style={{
-                marginTop: 16,
-                marginBottom: 16,
-                fontSize: 18,
-                lineHeight: '28px',
-                fontWeight: 600,
-                color: 'rgb(79,70,229)',
+                margin-top: 16;
+                margin-bottom: 16;
+                font-size: 18;
+                line-height: 28ppx;
+                font-weight: 600;
+                color: rgb(79,70,229);
               }}
             >
               We are thrilled to have you here !
@@ -90,7 +90,7 @@ export const { POST } = serve<InitialData>(async (context) => {
             >
              You are now a member of our platform ! You can reset your credential, move your books around, and never miss a beat !
             </Text>
-            <Button
+            <button
               href="https://react.email"
               style={{
                 marginTop: 16,
@@ -105,7 +105,7 @@ export const { POST } = serve<InitialData>(async (context) => {
               }}
             >
               Visit Our Platform
-            </Button>
+            </button>
           </Section>
         </Section>
       </Html>`})

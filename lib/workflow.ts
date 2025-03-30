@@ -20,7 +20,7 @@ export const sendEmail = async ({message, email, subject} : {message: string; em
           from: "Oliver <contact@testopia.pro>",
           to: [email],
           subject: subject,
-          react: message,
+          html: message,
           // react: Email(),
         },
       });
