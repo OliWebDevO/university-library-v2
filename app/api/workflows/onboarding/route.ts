@@ -68,21 +68,19 @@ export const { POST } = serve<InitialData>(async (context) => {
             >
              You are now a member of our platform ! You can reset your credential, move your books around, and never miss a beat !
             </p>
-            <button
-              style="
+           
+             <a style="
                 margin-top: 16px;
                 border-radius: 8px;
                 background-color: rgb(79,70,229);
                 padding-left: 40px;
                 padding-right: 40px;
                 padding-top: 12px;
-                padding-nottom: 12px;
+                padding-bottom: 12px;
                 font-weight: 600;
                 color: rgb(255,255,255);
-              "
-            >
-             <a href='https://university-library-v2-nu.vercel.app/' style='color: black; text-decoration:none;'> Visit Our Platform </a>
-            </button>
+              " href='https://university-library-v2-nu.vercel.app/' style='color: black; text-decoration:none;'> Visit Our Platform </a>
+            
           </Section>
         </Section>
       </Html>`})
