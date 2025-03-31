@@ -75,8 +75,8 @@ export const { POST } = serve<InitialData>(async (context) => {
                 background-color: rgb(79,70,229);
                 padding-left: 40px;
                 padding-right: 40px;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                padding-top: 2px;
+                padding-bottom: 2px;
                 font-weight: 600;
                 color: rgb(255,255,255);
                 text-decoration: none;
