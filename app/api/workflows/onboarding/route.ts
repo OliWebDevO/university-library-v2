@@ -81,7 +81,7 @@ export const { POST } = serve<InitialData>(async (context) => {
                 color: rgb(255,255,255);
               "
             >
-             <a style='color: black; text-decoration:none;'> Visit Our Platform </a>
+             <a href='https://university-library-v2-nu.vercel.app/' style='color: black; text-decoration:none;'> Visit Our Platform </a>
             </button>
           </Section>
         </Section>
