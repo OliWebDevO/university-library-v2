@@ -45,7 +45,7 @@ export const { POST } = serve<InitialData>(async (context) => {
     await sendEmail({email, subject: "Welcome to the platform", message: `<Html>
         <Section style={{ marginTop: 16, marginBottom: 16 }}>
           <Img alt="Herman Miller Chair" height="320" src="https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg"
-            style = "width: 100%; height: 320px; border-radius: 12px; object-fit: cover;"
+            style = "width: 80%; height: 320px; border-radius: 12px; object-fit: cover;"
           />
           <Section style="margin-top: 32px; text-align: center;">
             <p style = "margin-top: 16px; margin-bottom: 16px; font-size: 18px; line-height: 28px; font-weight: 600; color: rgb(79,70,229);">
