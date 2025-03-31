@@ -75,11 +75,12 @@ export const { POST } = serve<InitialData>(async (context) => {
                 background-color: rgb(79,70,229);
                 padding-left: 40px;
                 padding-right: 40px;
-                padding-top: 12px;
-                padding-bottom: 12px;
+                padding-top: 5px;
+                padding-bottom: 5px;
                 font-weight: 600;
                 color: rgb(255,255,255);
-              " href='https://university-library-v2-nu.vercel.app/' style='color: black; text-decoration:none;'> Visit Our Platform </a>
+                text-decoration: none;
+              " href='https://university-library-v2-nu.vercel.app/'> Visit Our Platform </a>
             
           </Section>
         </Section>
