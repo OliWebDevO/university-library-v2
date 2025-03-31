@@ -3,8 +3,8 @@ import { users } from "@/database/schema";
 import { sendEmail } from "@/lib/workflow";
 import { serve } from "@upstash/workflow/nextjs"
 import { eq } from "drizzle-orm";
-import { Button, Html, Section, Img, Text, Heading } from "@react-email/components";
-import * as React from "react";
+// import { Button, Html, Section, Img, Text, Heading } from "@react-email/components";
+// import * as React from "react";
 type UserState = "non-active" | "active";
 
 type InitialData = {
