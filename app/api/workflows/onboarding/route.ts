@@ -43,7 +43,7 @@ export const { POST } = serve<InitialData>(async (context) => {
   await context.run("new-signup", async () => {
     // await sendEmail({email, subject: "Welcome to the platform", message: `Hello ${fullName}, welcome to our platform!`})
     await sendEmail({email, subject: "Welcome to the platform", message: `<Html>
-        <Section style=" margin-top: 16px; margin-bottom: 16px;>
+        <Section style=" margin-top: 16px; margin-bottom: 16px;">
           <Img alt="Herman Miller Chair" height="320" src="https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg"
             style = "width: 100%; height: 320px; border-radius: 12px; object-fit: cover;"
           />
