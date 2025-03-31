@@ -47,25 +47,25 @@ export const { POST } = serve<InitialData>(async (context) => {
           <Img
             alt="Herman Miller Chair"
             height="320"
-            src="https://react.email/static/herman-miller-chair.jpg"
+            src="https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg"
             style={{
               width: 100%;
-              border-radius: 12;
-              object-fit: 'cover';
+              border-radius: 12px;
+              object-fit: cover;
             }}
           />
           <Section
             style={{
-              margin-top: 32;
-              text-align: 'center';
+              margin-top: 32px;
+              text-align: center;
             }}
           >
             <p
               style={{
-                margin-top: 16;
-                margin-bottom: 16;
-                font-size: 18;
-                line-height: 28ppx;
+                margin-top: 16px;
+                margin-bottom: 16px;
+                font-size: 18px;
+                line-height: 28px;
                 font-weight: 600;
                 color: rgb(79,70,229);
               }}
@@ -75,33 +75,33 @@ export const { POST } = serve<InitialData>(async (context) => {
             <h1
               as="h1"
               style={{
-                margin: '0px',
-                marginTop: 8,
-                fontSize: 36,
-                lineHeight: '36px',
-                fontWeight: 600,
-                color: 'rgb(17,24,39)',
+                margin: 0px;
+                margin-top: 8px;
+                font-size: 36px;
+                line-height: 36px;
+                font-weight: 600;
+                color: rgb(17,24,39);
               }}
             >
               Welcome to our library  !
             </h1>
             <p
-              style={{ fontSize: 16, lineHeight: '24px', color: 'rgb(107,114,128)' }}
+              style={{ font-size: 16px; line-height: 24px; color: rgb(107,114,128); }}
             >
              You are now a member of our platform ! You can reset your credential, move your books around, and never miss a beat !
             </p>
             <button
-              href="https://react.email"
+              href="https://university-library-v2-nu.vercel.app"
               style={{
-                margin-top: 16,
-                border-radius: 8,
-                background-color: 'rgb(79,70,229)',
-                padding-left: 40,
-                padding-right: 40,
-                padding-top: 12,
-                padding-nottom: 12,
-                font-weight: 600,
-                color: 'rgb(255,255,255)',
+                margin-top: 16px;
+                border-radius: 8px;
+                background-color: rgb(79,70,229);
+                padding-left: 40px;
+                padding-right: 40px;
+                padding-top: 12px;
+                padding-nottom: 12px;
+                font-weight: 600;
+                color: rgb(255,255,255);
               }}
             >
               Visit Our Platform
