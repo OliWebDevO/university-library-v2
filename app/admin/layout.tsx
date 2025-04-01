@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import React, { ReactNode } from 'react'
 import "@/styles/admin.css"
 import Siderbar from '@/components/admin/Siderbar';
+import Header from '@/components/admin/Header';
 
 const layout = async ({children}:{children: ReactNode}) => {
 
@@ -13,9 +14,9 @@ const layout = async ({children}:{children: ReactNode}) => {
 
   return (
     <main className='flex min-h-screen w-full flex-row'>
-        <Siderbar />
+        <Siderbar session={session} />
         <div className='admin-container'>
-            <p>Header</p>
+            <Header session={session} />
             {children}
         </div>
     </main>

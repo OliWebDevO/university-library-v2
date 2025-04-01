@@ -1,12 +1,14 @@
 'use client';
 import { adminSideBarLinks } from '@/constants'
-import { cn } from '@/lib/utils'
+import { cn, getInitials } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import { Avatar, AvatarFallback } from '../ui/avatar';
+import { Session } from 'next-auth';
 
-const Siderbar = () => {
+const Siderbar = ({session}:{session: Session}) => {
     const pathname = usePathname();
   return (
     <div className='admin-sidebar'>
@@ -34,6 +36,18 @@ const Siderbar = () => {
                     </Link>
                    )
                 })}
+            </div>
+        </div>
+        <div className='user'>
+            <Avatar>
+                <AvatarFallback className=' bg-amber-100'>
+                    {getInitials(session?.user?.name || 'IN')}
+                </AvatarFallback>
+            </Avatar>
+            <div className='flex flex-col max-md:hidden'>
+                <p className='font-semibold text-dark-200'>{session?.user?.name}</p>
+                <p className='text-light-500 text-xs'>{session?.user?.email}</p>
+
             </div>
         </div>
     </div>
