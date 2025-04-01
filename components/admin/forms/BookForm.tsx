@@ -17,6 +17,9 @@ import { useRouter } from "next/navigation";
 import { bookSchema } from "@/lib/validation";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import FileUpload from "@/components/FileUpload";
+import { Placeholder } from "drizzle-orm";
+import ColorPicker from "../ColorPicker";
 
 interface Props extends Partial<Book> {
     type?: 'create' | 'update' ;
@@ -43,7 +46,9 @@ const BookForm = ({type, ...book}: Props) => {
       })
      
       // 2. Define a submit handler
-       const onSubmit = async (values: z.infer<typeof bookSchema>) => {};
+       const onSubmit = async (values: z.infer<typeof bookSchema>) => {
+        console.log(values);
+       };
 
     return (
             <Form {...form}>
@@ -130,7 +135,7 @@ const BookForm = ({type, ...book}: Props) => {
                             className="book-form_input"
                                 />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage/>
                         </FormItem>
                     )}
                     />
@@ -167,7 +172,14 @@ const BookForm = ({type, ...book}: Props) => {
                             Book Image
                         </FormLabel>
                         <FormControl>
-                            {/*File Upload */}
+                            <FileUpload 
+                            type='image' 
+                            accept='image/*' 
+                            placeholder='Upload a book cover' 
+                            folder='books/covers' 
+                            variant='light' 
+                            onFileChange={field.onChange} 
+                            value={field.value} />
                         </FormControl>
                         <FormMessage />
                         </FormItem>
@@ -183,7 +195,10 @@ const BookForm = ({type, ...book}: Props) => {
                             Primary Color
                         </FormLabel>
                         <FormControl>
-                            {/* Color Picker */}
+                            <ColorPicker
+                            onPickerChange={(field.onChange)}
+                            value={field.value}
+                            />
                         </FormControl>
                         <FormMessage />
                         </FormItem>
@@ -216,7 +231,14 @@ const BookForm = ({type, ...book}: Props) => {
                             Book Trailer
                         </FormLabel>
                         <FormControl>
-                            {/*File Upload */}
+                        <FileUpload 
+                            type='video' 
+                            accept='video/*' 
+                            placeholder='Upload a book trailer' 
+                            folder='books/videos' 
+                            variant='light' 
+                            onFileChange={field.onChange} 
+                            value={field.value} />
                         </FormControl>
                         <FormMessage />
                         </FormItem>
