@@ -12,7 +12,7 @@ const BookOverview = ({
     totalCopies,
     availableCopies, 
     description, 
-    color, 
+    coverColor, 
     coverUrl, 
 }: Book) => {
   return (
@@ -43,7 +43,7 @@ const BookOverview = ({
             <div className='relative'>
                 <BookCover 
                     variant='wide'
-                    coverColor={color}
+                    coverColor={coverColor}
                     coverImage ={coverUrl}
                  />
 
