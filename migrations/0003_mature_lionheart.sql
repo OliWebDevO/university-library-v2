@@ -1,0 +1,4 @@
+ALTER TABLE "borrow_records" ADD COLUMN "book_title" varchar NOT NULL;--> statement-breakpoint
+ALTER TABLE "borrow_records" ADD COLUMN "book_author" varchar NOT NULL;--> statement-breakpoint
+ALTER TABLE "borrow_records" ADD CONSTRAINT "borrow_records_book_title_books_title_fk" FOREIGN KEY ("book_title") REFERENCES "public"."books"("title") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "borrow_records" ADD CONSTRAINT "borrow_records_book_author_books_author_fk" FOREIGN KEY ("book_author") REFERENCES "public"."books"("author") ON DELETE no action ON UPDATE no action;

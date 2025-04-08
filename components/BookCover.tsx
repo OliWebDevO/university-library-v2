@@ -44,7 +44,8 @@ const BookCover = ({
                 className='rounded-sm object-fill' 
                 loading='lazy' 
                 //Lower quality image placeholder
-                lqip={{active:true}}/>
+                // lqip={{active:true}}
+                />
         </div>
     
     </div>

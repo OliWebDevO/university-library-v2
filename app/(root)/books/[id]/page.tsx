@@ -23,7 +23,6 @@ const page = async ({params}: {params: Promise<{id :string}>}) => {
         if(!bookDetails) redirect('/404');
 
         console.log(bookDetails);
-
   return (
   <>
     <BookOverview {...bookDetails} userId={session?.user?.id as string} />

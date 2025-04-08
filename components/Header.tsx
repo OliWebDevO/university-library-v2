@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
-import { cn, getFirstName, getInitials } from '@/lib/utils'
+import { cn, getInitials } from '@/lib/utils'
 import Image from 'next/image'
 import { Avatar, AvatarFallback} from "@/components/ui/avatar"
 import { Session } from 'next-auth'
@@ -18,9 +18,9 @@ const Header = ({session} : {session : Session}) => {
         </Link>
         <ul className='flex flex-row items-center gap-8'>
             <li>
-                <Link href="/books" className={cn('text-base cursor-pointer capitalize', pathname === '/library' ? 'text--light-200' : 'text-light-100')}>
+                {/* <Link href="/books" className={cn('text-base cursor-pointer capitalize', pathname === '/library' ? 'text--light-200' : 'text-light-100')}>
                     Library
-                </Link> 
+                </Link>  */}
             </li>
             <li>
                 <Link href='/my-profile'>
@@ -29,8 +29,7 @@ const Header = ({session} : {session : Session}) => {
                             {getInitials(session?.user?.name || 'IN')}
                         </AvatarFallback>
                     </Avatar>
-                </Link>
-                
+                </Link> 
             </li>
         </ul>
     </header>
