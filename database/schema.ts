@@ -46,12 +46,6 @@ export const borrowRecords = pgTable("borrow_records", {
   bookId: uuid("book_id")
     .references(() => books.id)
     .notNull(),
-  // bookTitle: varchar("book_title")
-  //   .references(() => books.title)
-  //   .notNull(),
-  // bookAuthor: varchar("book_author")
-  //   .references(() => books.author)
-  //   .notNull(),
   borrowDate: timestamp("borrow_date", { withTimezone: true })
     .defaultNow()
     .notNull(),
