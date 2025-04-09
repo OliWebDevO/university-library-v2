@@ -29,7 +29,6 @@ const BorrowBookButton = ({userId, bookId, borrowingEligibility: {isEligible, me
                 variant: 'destructive',
             })
         }
-
         setBorrowing(true)
         try {
             const result = await borrowBook({bookId, userId})

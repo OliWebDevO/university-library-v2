@@ -26,7 +26,7 @@ const page = async () => {
       .limit(10);
 
   return (
-    <div className='w-[92vw]  flex flex-col items-start justify-start'>
+    <div className='w-[80vw] md:w-[92vw]  flex flex-col items-start justify-start'>
         <form
             action={async () => {
               'use server';

@@ -3,8 +3,9 @@ import React from 'react'
 import BookCover from './BookCover'
 import BorrowBookButton from './BorrowBookButton'
 import { db } from '@/database/drizzle'
-import { users } from '@/database/schema'
+import { borrowRecords, users } from '@/database/schema'
 import { eq } from 'drizzle-orm'
+import CancelBorrowBookButton from './CancelBookBorrowButton'
 
 interface Props extends Book {
     userId: string
@@ -24,6 +25,8 @@ const BookOverview = async ({
     userId,
 }: Props) => {
 
+    
+
     const [user] = await db
         .select()
         .from(users)
@@ -35,6 +38,8 @@ const BookOverview = async ({
             isEligible: availableCopies > 0 && user.status === 'approved',
             message: availableCopies <= 0 ? 'Book not available for borrowing' : 'Your account is not eligible for borrowing books',
         }
+    
+        
 
   return (
     <section className='book-overview'>
@@ -55,7 +60,10 @@ const BookOverview = async ({
             <p className='book-description'>
                 {description}
             </p>
-            <BorrowBookButton bookId={id} userId={userId} borrowingEligibility={borrowingEligibility} />
+            <div className='flex flex-row gap-5'>
+                <BorrowBookButton bookId={id} userId={userId} borrowingEligibility={borrowingEligibility} />
+                 <CancelBorrowBookButton userId={userId} bookId={id} />
+            </div>
         </div>
         <div className='relative flex flex-1 justify-center'>
             <div className='relative'>
