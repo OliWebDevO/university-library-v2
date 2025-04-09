@@ -1,10 +1,13 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { useRouter } from 'next/navigation';
 import { toast } from '@/hooks/use-toast';
 import { cancelBorrowBook } from '@/lib/actions/book';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/store';
+import { stopBorrowing } from '@/store/borrowingSlice';
 
 interface Props {
     userId: string;
@@ -13,11 +16,12 @@ interface Props {
 
 const CancelBorrowBookButton = ({ userId, bookId }: Props) => {
     const router = useRouter();
-    const [isDisabled, setIsDisabled] = useState(false); // State to disable the button
+    const dispatch = useDispatch();
+    const borrowingBooks = useSelector((state: RootState) => state.borrow.borrowingBooks);
+    const isBorrowing = borrowingBooks.includes(bookId); // Check if the book is being borrowed
 
     const handleCancelBorrow = async () => {
-        if (isDisabled) return; // Prevent multiple clicks
-        setIsDisabled(true); // Disable the button immediately
+        if (!isBorrowing) return; // Prevent multiple clicks
 
         try {
             const result = await cancelBorrowBook({ bookId, userId });
@@ -27,6 +31,7 @@ const CancelBorrowBookButton = ({ userId, bookId }: Props) => {
                     title: 'Success',
                     description: 'Book unborrowed successfully.',
                 });
+                dispatch(stopBorrowing(bookId)); // Remove the book from the borrowing state
                 router.refresh(); // Refresh the page to reflect changes
             } else {
                 toast({
@@ -34,7 +39,6 @@ const CancelBorrowBookButton = ({ userId, bookId }: Props) => {
                     description: result.message || 'Failed to unborrow the book.',
                     variant: 'destructive',
                 });
-                setIsDisabled(false); // Re-enable the button if the operation fails
             }
         } catch (error) {
             toast({
@@ -42,7 +46,6 @@ const CancelBorrowBookButton = ({ userId, bookId }: Props) => {
                 description: 'An error occurred while unborrowing the book.',
                 variant: 'destructive',
             });
-            setIsDisabled(false); // Re-enable the button if an error occurs
         }
     };
 
@@ -50,11 +53,11 @@ const CancelBorrowBookButton = ({ userId, bookId }: Props) => {
         <Button
             className='book-overview_btn'
             onClick={handleCancelBorrow}
-            disabled={isDisabled} // Disable the button based on state
+            disabled={!isBorrowing} // Disable the button if the book is not being borrowed
         >
             <Image src='/icons/book.svg' className='' alt='arrow-right' width={20} height={20} />
             <p className='font-bebas-neue text-xl text-dark-100'>
-                {isDisabled ? 'Canceling...' : 'Cancel Borrow'}
+                {isBorrowing ? 'Cancel Borrow' : 'Cancel Borrow'}
             </p>
         </Button>
     );

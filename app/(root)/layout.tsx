@@ -8,6 +8,7 @@ import { after } from "next/server";
 import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
 import { eq } from "drizzle-orm";
+import ClientWrapper from "@/components/ClientWrapper";
 
 const Layout = async ({children} : {children : ReactNode}) => {
 
@@ -38,7 +39,7 @@ const Layout = async ({children} : {children : ReactNode}) => {
         <div className='mx-auto max-w-7xl'>
             <Header session={session} />
             <div className='mt-20 pb-20'>
-                {children}
+            <ClientWrapper>{children}</ClientWrapper>
             </div>
 
         </div>
