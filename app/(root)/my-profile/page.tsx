@@ -8,6 +8,7 @@ import React from 'react';
 import { approveUser, revertUser } from '@/lib/actions/userActions'; // Import the actions
 import { auth } from '@/auth'; // Import auth to fetch session
 import { redirect } from 'next/navigation'; // Import redirect from next/navigation
+import { toast } from '@/hooks/use-toast';
 
 const page = async () => {
   const session = await auth(); // Fetch the session to get the logged-in user's ID
@@ -66,10 +67,13 @@ const page = async () => {
               'use server';
               await approveUser(currentUser[0].id); // Call the approveUser action
               redirect('/'); // Redirect to the home page
+             
             }}
           >
+        
             <Button>Approve Membership</Button>
           </form>
+          
         ) : (
           <form
             action={async () => {
