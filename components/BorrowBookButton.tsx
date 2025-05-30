@@ -39,6 +39,7 @@ const BorrowBookButton = ({ userId, bookId, borrowingEligibility: { isEligible, 
         }
 
         try {
+            
             const result = await borrowBook({ bookId, userId });
 
             if (result.success) {
