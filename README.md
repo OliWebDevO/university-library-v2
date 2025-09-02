@@ -1,7 +1,7 @@
 # 📚 University Library Management System
 
 <div align="center">
-  <img src="public/images/auth-illustration.png" alt="Library Management System" width="800" height="400" style='"object-fit: cover; object-position: center;' />
+  <img src="public/images/auth-illustration.png" alt="Library Management System" width="800" height="400" style="object-fit: cover; object-position: center;" />
   
   **A modern, full-stack library management system with authentication, book borrowing, and admin features**
   
