@@ -1,8 +1,7 @@
 # 📚 University Library Management System
 
 <div align="center">
-  <img src="public/images/auth-illustration.png" alt="Library Management System" width="800" height="400" style="object-fit: cover" />
-  
+  <img src="public/images/cover.png" alt="Library Management System" width="800" height="400" style="object-fit: cover"
   **A modern, full-stack library management system with authentication, book borrowing, and admin features**
   
   [![Live Demo](https://img.shields.io/badge/Live%20Demo-university--library--v2.vercel.app-blue?style=for-the-badge&logo=vercel)](https://university-library-v2-nu.vercel.app/)
